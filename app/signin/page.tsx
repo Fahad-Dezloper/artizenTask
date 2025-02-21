@@ -49,10 +49,10 @@ const Page = () => {
               {otp.map((digit, index) => (
                 <input
                   key={index}
-                  ref={(el) => (inputRefs.current[index] = el)}
+                  ref={(el) => { inputRefs.current[index] = el; }}
                   type="text"
                   className="bg-[#F5F5F5] px-4 py-2 text-lg h-14 w-14 rounded-xl outline-none text-center tracking-widest"
-                  maxLength="1"
+                  maxLength={1}
                   value={digit}
                   onChange={(e) => handleChange(index, e)}
                   onKeyDown={(e) => handleKeyDown(index, e)}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { TrendingDown, TrendingUp } from 'lucide-react'
 import React from 'react'
 

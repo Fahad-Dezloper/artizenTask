@@ -2,7 +2,7 @@ import React from 'react'
 import Topbar from './Topbar'
 import Dets from './Dets'
 import Graphs from './Graphs'
-import SalesChart from '@/sales-chart'
+import SalesChart from './sales-chart'
 
 const Dashboard = () => {
   return (

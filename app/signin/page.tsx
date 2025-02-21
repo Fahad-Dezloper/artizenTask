@@ -12,9 +12,9 @@ const Page = () => {
   }
 
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
-  const inputRefs = useRef([]);
+  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  const handleChange = (index, e) => {
+  const handleChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/[^0-9]/.test(value)) return;
 
@@ -23,13 +23,13 @@ const Page = () => {
     setOtp(newOtp);
 
     if (value && index < 5) {
-      inputRefs.current[index + 1].focus();
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
-  const handleKeyDown = (index, e) => {
+  const handleKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
-      inputRefs.current[index - 1].focus();
+      inputRefs.current[index - 1]?.focus();
     }
   };
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
@@ -73,7 +74,7 @@ export default function SalesChart() {
                   stroke="hsl(var(--muted-foreground))"
                 />
                 <ChartTooltip
-                  content={<ChartTooltipContent formatter={(value: number) => [`${value.toFixed(4)}%`, "Value"]} />}
+                  content={<ChartTooltipContent formatter={(value: any) => [`${Number(value).toFixed(4)}%`, "Value"]} />}
                 />
                 <Area
                   type="monotone"
